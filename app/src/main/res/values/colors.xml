@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#E91E63</color>
+a
+    <!--Main Colors-->
+    <color name="da_wae_dark">#34344A</color>
+    <color name="da_wae_light">#413C58</color>
+    <color name="da_wae_lighter">#675F8A</color>
+    <color name="da_wae_bright">#A39CC5</color>
+
+    <!--Drawing Colors-->
+    <color name="drawing_background">#212830</color>
+
+    <!--Nord Polar Night-->
+    <color name="nord_3">#576175</color>
+
+    <!--Nord Snow Storm-->
+    <color name="nord_4">#D8DEE9</color>
+
+    <!--Nord Frost-->
+    <color name="nord_7">#8FBCBB</color>
+    <color name="nord_8">#88C0D0</color>
+    <color name="nord_9">#81A1C1</color>
+
+    <!--Nord Aurora-->
+    <color name="nord_11">#BF616A</color>
+    <color name="nord_12">#D08770</color>
+    <color name="nord_13">#EBCB8B</color>
+    <color name="nord_14">#A3BE8C</color>
+    <color name="nord_15">#B48EAD</color>
+
+</resources>

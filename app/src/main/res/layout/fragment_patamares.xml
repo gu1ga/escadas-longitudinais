@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.geometria.patmares.PatamaresFragment">
+
+    <data>
+
+        <variable
+            name="patamaresViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.geometria.patamares.PatamaresViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_padding"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/image_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/image_patamares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/geometria_planta_escada_1_lance_2_patamares"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_patamares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null">
+
+            <com.google.android.material.chip.Chip
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/chip_background_tint"
+                android:checkable="true"
+                android:checked="@={patamaresViewModel.existePatamarInicial}"
+                android:text="@string/patamar_inicial"
+                android:textColor="@color/white"
+                android:textSize="@dimen/home_title_size" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/chip_background_tint"
+                android:checkable="true"
+                android:checked="@={patamaresViewModel.existePatamarIntermediario}"
+                android:text="@string/patamar_intermediario"
+                android:textColor="@color/white"
+                android:textSize="@dimen/home_title_size"
+
+                />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_side">0dp </dimen>
+    <dimen name="home_title_size">16sp</dimen>
+    <dimen name="text_size_tiny">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="default_padding">4dp</dimen>
+
+    <!-- CARGAS -->
+
+    <dimen name="default_start_end_margin">12dp</dimen>
+    <dimen name="default_top_bottom_marign">6dp</dimen>
+</resources>

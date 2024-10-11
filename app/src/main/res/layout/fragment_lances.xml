@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.geometria.lances.LancesFragment">
+
+    <data>
+        <variable
+            name="lancesViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.geometria.lances.LancesViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@null">
+
+        <ImageView
+            android:id="@+id/image_lances"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/geometria_planta_escada_2_lances_2_patamares_geom"
+             />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_lances"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            android:background="@null">
+
+            <com.google.android.material.chip.Chip
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/chip_background_tint"
+                android:textColor="@color/white"
+                android:checkable="true"
+                android:text="@string/um_lance"
+                android:checked="@={lancesViewModel.umLanceChecked}"
+                android:textSize="@dimen/home_title_size"
+                />
+
+            <com.google.android.material.chip.Chip
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:backgroundTint="@color/chip_background_tint"
+                android:textColor="@color/white"
+                android:text="@string/dois_lances"
+                android:checked="@={lancesViewModel.doisLancesChecked}"
+                android:textSize="@dimen/home_title_size"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+</layout>

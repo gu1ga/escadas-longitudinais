@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="home_titles">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="avisos">
+        <item name="android:textColor">#F44336</item>
+    </style>
+
+    <style name="edit_text_geometria">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/home_title_size</item>
+        <item name="android:layout_marginStart">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_start_end_margin</item>
+    </style>
+
+    <style name="edit_text_degraus">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/home_title_size</item>
+    </style>
+
+    <style name="geometria_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingBottom">@dimen/default_padding</item>
+        <item name="android:layout_marginStart">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_start_end_margin</item>
+    </style>
+
+    <style name="degraus_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">@dimen/default_padding</item>
+
+    </style>
+
+    <style name="button_salvar">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="cargas_table_title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="cargas_table_value">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="flexao_table_title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_top_bottom_marign</item>
+        <item name="android:layout_marginTop">@dimen/default_top_bottom_marign</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="flexao_table_value">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_top_bottom_marign</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="flexao_table_unit">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="relatorio_table_title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="relatorio_table_value">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="relatorio_table_unit">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/default_start_end_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
+    <style name="input_layout_default">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_top_bottom_marign</item>
+        <item name="android:layout_marginEnd">@dimen/default_start_end_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_top_bottom_marign</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="scroll_view">
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarThumbVertical">@color/da_wae_dark</item>
+    </style>
+
+</resources>

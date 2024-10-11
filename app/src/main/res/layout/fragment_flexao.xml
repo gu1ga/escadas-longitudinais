@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.flexao.FlexaoFragmentt">
+
+    <data>
+        <variable
+            name="flexaoViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.flexao.FlexaoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/layout_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/layout_flexao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:fadeScrollbars="false"
+                style="@style/scroll_view"
+                android:background="@drawable/edittext_rectangle">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_start_end_margin"
+                    android:layout_marginEnd="@dimen/default_start_end_margin"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign">
+
+                        <TableRow
+                            android:id="@+id/flexao_relatorio"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_dark"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:text="@string/resultados"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_big"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/botao_flexao"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                                android:layout_marginEnd="@dimen/default_start_end_margin"
+                                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                                android:background="@color/da_wae_bright"
+                                android:paddingStart="@dimen/default_start_end_margin"
+                                android:paddingEnd="@dimen/default_start_end_margin"
+                                android:text="@string/mostrar_detalhes"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white" />
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/default_top_bottom_marign">
+
+                            <TableRow
+                                android:id="@+id/fyk"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/fyk" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.fykString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_por_cm2" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/fyd"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/fyd" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.fydString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_por_cm2" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/divisor_classe_resistencia"
+                                android:layout_width="match_parent"
+                                android:paddingTop="4dp"
+                                android:background="@color/da_wae_light"
+                                android:gravity="center">
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/fck"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/fck" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.fckString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_por_cm2" />
+
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/fcd"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/fcd" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.fcdString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_por_cm2" />
+
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/divisor_momentos"
+                                android:layout_width="match_parent"
+                                android:paddingTop="4dp"
+                                android:background="@color/da_wae_light"
+                                android:gravity="center">
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/momento_caracteristico"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/mk" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.momentoCaracteristicoString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_x_m" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/momento_de_calculo"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/md" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.momentoDeCalculoString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/kgf_x_m" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/divisor_linha_neutra"
+                                android:layout_width="match_parent"
+                                android:paddingTop="4dp"
+                                android:background="@color/da_wae_light"
+                                android:gravity="center">
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/altura_util"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/altura_util" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.alturaUtilString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/cm" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/altura_linha_neutra"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/altura_linha_neutra" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.alturaLinhaNeutraString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/cm" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/kx"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/relacao_x_sobre_d" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.kxString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/dominio"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_bright"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/dominio_titulo" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.dominioString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/area_aco_principal"
+                                android:layout_width="match_parent"
+                                android:layout_weight="100"
+                                android:background="@color/da_wae_lighter"
+                                android:gravity="center">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/area_aco_principal_titulo" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.areaAcoPositivoPrincipalString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/cm2_por_m" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/area_aco_secundaria"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_lighter"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/area_aco_secundaria" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.areaAcoPositivoSecundarioString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/cm2_por_m" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/area_aco_negativa"
+                                android:layout_width="match_parent"
+                                android:background="@color/da_wae_lighter"
+                                android:gravity="center"
+                                android:weightSum="100">
+
+                                <TextView
+                                    style="@style/relatorio_table_title"
+                                    android:layout_weight="35"
+                                    android:text="@string/area_aco_negativa" />
+
+                                <TextView
+                                    style="@style/relatorio_table_value"
+                                    android:layout_weight="45"
+                                    android:text="@{flexaoViewModel.areaAcoNegativoString}" />
+
+                                <TextView
+                                    style="@style/relatorio_table_unit"
+                                    android:layout_weight="20"
+                                    android:text="@string/cm2_por_m" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </TableLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                        android:orientation="vertical"
+                        android:background="@drawable/edittext_rectangle">
+
+                        <TextView
+                            style="@style/home_titles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/default_start_end_margin"
+                            android:text="Armadura Positiva Principal:" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_start_end_margin"
+                            android:layout_marginEnd="@dimen/default_start_end_margin"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="Φ" />
+
+                            <Spinner
+                                android:id="@+id/spinner_barra_positiva_principal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.bitolaArmaduraPositivaPrincipalOnClickListener}"/>
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="C/" />
+
+                            <Spinner
+                                android:id="@+id/spinner_espacamento_positivo_principal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.espacamentoArmaduraPositivaPrincipalOnClickListener}"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/area_aco_efetivo_por_metro(flexaoViewModel.areaAcoEfetivoPorMetroPositivoPrincipal)}"
+                                style="@style/home_titles"
+                                android:layout_gravity="end" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                        android:orientation="vertical"
+                        android:background="@drawable/edittext_rectangle">
+
+                        <TextView
+                            style="@style/home_titles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/default_start_end_margin"
+                            android:text="Armadura Positiva Secundária:" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_start_end_margin"
+                            android:layout_marginEnd="@dimen/default_start_end_margin"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="Φ" />
+
+                            <Spinner
+                                android:id="@+id/spinner_barra_positiva_secundária"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.bitolaArmaduraPositivaSecundarialOnClickListener}"/>
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="C/" />
+
+                            <Spinner
+                                android:id="@+id/spinner_espacamento_positivo_secundario"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.espacamentoArmaduraPositivaSecundariaOnClickListener}"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/area_aco_efetivo_por_metro(flexaoViewModel.areaAcoEfetivoPorMetroPositivoSecundario)}"
+                                style="@style/home_titles"
+                                android:layout_gravity="end"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:orientation="vertical"
+                        android:background="@drawable/edittext_rectangle">
+
+                        <TextView
+                            style="@style/home_titles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/default_start_end_margin"
+                            android:text="Armadura Negativa:" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_start_end_margin"
+                            android:layout_marginEnd="@dimen/default_start_end_margin"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="Φ" />
+
+                            <Spinner
+                                android:id="@+id/spinner_barra_negativa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.bitolaArmaduraNegativalOnClickListener}"/>
+
+                            <TextView
+                                style="@style/home_titles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:text="C/" />
+
+                            <Spinner
+                                android:id="@+id/spinner_espacamento_negativo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:spinnerMode="dialog"
+                                tools:setOnItemSelectedListener="@{flexaoViewModel.espacamentoArmaduraNegativaOnClickListener}"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/area_aco_efetivo_por_metro(flexaoViewModel.areaAcoEfetivoPorMetroNegativo)}"
+                                style="@style/home_titles"
+                                android:layout_gravity="end"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

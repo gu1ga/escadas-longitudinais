@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.DimensionamentoFragment">
+
+    <data>
+
+        <variable
+            name="processamentoViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.processamento.ProcessamentoViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_espessura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/h_text"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:helperTextEnabled="true"
+            app:helperText="@string/h_hint"
+            app:layout_constraintTop_toBottomOf="@id/image_cargas_permanentes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="@={processamentoViewModel.espessura}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cobrimento_efetivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cobrimento_efetivo_cm"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:helperTextEnabled="true"
+            app:helperText="@string/cobrimento_efetivo_hint"
+            app:layout_constraintTop_toBottomOf="@id/image_cargas_permanentes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="@={processamentoViewModel.cobrimentoEfetivo}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_dimensionar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_start_end_margin"
+            android:layout_marginStart="@dimen/default_start_end_margin"
+            android:text="DIMENSIONAR"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> processamentoViewModel.dimensionar()}"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_flexao_ok"
+            style="@style/input_layout_default"
+            app:layout_constraintBottom_toTopOf="@id/button_dimensionar"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_flexao_ok"
+                style="@style/geometria_text"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/ic_outline_more_horiz_24"
+                android:text="Flexão"
+                android:textSize="@dimen/text_size_big" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_flecha_ok"
+            style="@style/input_layout_default"
+            app:layout_constraintBottom_toTopOf="@id/button_dimensionar"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_flecha_ok"
+                style="@style/geometria_text"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/ic_outline_more_horiz_24"
+                android:text="Flecha"
+                android:textSize="@dimen/text_size_big" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_cisalhamento_ok"
+            style="@style/input_layout_default"
+            app:layout_constraintBottom_toTopOf="@id/button_dimensionar"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_cisalhamento_ok"
+                style="@style/geometria_text"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/ic_outline_more_horiz_24"
+                android:text="Cisalhamento"
+                android:textSize="@dimen/text_size_big" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

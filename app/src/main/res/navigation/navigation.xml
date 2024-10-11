@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/geometriaFragment">
+
+    <fragment
+        android:id="@+id/geometriaFragment"
+        android:name="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.geometria.GeometriaFragment"
+        android:label="@string/geometria"
+        tools:layout="@layout/fragment_geometria_host" />
+
+    <fragment
+        android:id="@+id/cargasFragment"
+        android:name="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.CargasFragment"
+        android:label="@string/cargas"
+        tools:layout="@layout/fragment_cargas_host" />
+
+    <fragment
+        android:id="@+id/dimensionamentoFragment"
+        android:name="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.DimensionamentoFragment"
+        android:label="@string/dimensionamento"
+        tools:layout="@layout/fragment_dimensionamento_host" />
+
+    <fragment
+        android:id="@+id/detalhamentoFragment"
+        android:name="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.detalhamento.DetalhamentoFragment"
+        android:label="@string/detalhamento"
+        tools:layout="@layout/fragment_detalhamento" />
+    <fragment
+        android:id="@+id/materiaisFragment"
+        android:name="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.materiais.MateriaisFragment"
+        android:label="Materiais"
+        tools:layout="@layout/fragment_materiais" />
+</navigation>

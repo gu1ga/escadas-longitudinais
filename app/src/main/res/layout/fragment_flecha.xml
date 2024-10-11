@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dimensionamento.flecha.FlechaFragment">
+
+    <data>
+
+        <variable
+            name="flechaViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.dimensionamento.flecha.FlechaViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/layout_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/layout_flecha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginTop="@dimen/default_start_end_margin"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                android:orientation="vertical"
+                android:background="@drawable/edittext_rectangle">
+
+                <TextView
+                    style="@style/home_titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_start_end_margin"
+                    android:text="@string/armadura_positiva_principal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_start_end_margin"
+                    android:layout_marginEnd="@dimen/default_start_end_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/home_titles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_start_end_margin"
+                        android:text="Φ" />
+
+                    <Spinner
+                        android:id="@+id/spinner_barra_positiva_principal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        tools:setOnItemSelectedListener="@{flechaViewModel.bitolaArmaduraPositivaPrincipalOnClickListener}"/>
+
+                    <TextView
+                        style="@style/home_titles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_start_end_margin"
+                        android:text="C/" />
+
+                    <Spinner
+                        android:id="@+id/spinner_espacamento_positivo_principal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        tools:setOnItemSelectedListener="@{flechaViewModel.espacamentoArmaduraPositivaPrincipalOnClickListener}"/>
+
+                    <TextView
+                        style="@style/home_titles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="@{@string/area_aco_efetivo_por_metro(flechaViewModel.areaAcoEfetivoPorMetroPositivoPrincipal)}" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_dimensionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:text="VERIFICAR FLECHA"
+                android:onClick="@{()->flechaViewModel.verificarFlecha()}"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                android:background="@color/purple_700">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:background="@color/da_wae_dark"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_margin="@dimen/default_start_end_margin"
+                        android:text="@string/resultados"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_big"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_margin="@dimen/default_start_end_margin"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/botao_flecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/default_start_end_margin"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:layout_marginEnd="@dimen/default_start_end_margin"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                        android:background="@color/da_wae_bright"
+                        android:paddingStart="@dimen/default_start_end_margin"
+                        android:paddingEnd="@dimen/default_start_end_margin"
+                        android:text="@string/mostrar_detalhes"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </TableRow>
+
+            </TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                style="@style/scroll_view"     >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    
+                    <TableLayout
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:id="@+id/momento_atuante"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/momento_els" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.momentoAtuanteString}"/>
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/kgf_x_cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/momento_fissuracao"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/momento_fissuracao" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.momentoFissuracaoString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/kgf_x_cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/peca_fissurada"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:text="Peça Fissurada" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/divisor_rigidez"
+                            android:layout_width="match_parent"
+                            android:paddingTop="4dp"
+                            android:background="@color/da_wae_light"
+                            android:gravity="center">
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rigidez_total"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/rigidez_total" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.rigidezTotalString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/kgf_x_cm2" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/altura_linha_neutra_estadioII"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/altura_linha_neutra_estadio_2" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.alturaLinhaNeutraEstadioIIString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/momento_inercia_estadioII"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/momento_inercia_estadio_2" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.momentoInerciaEstadioIIString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm4" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rigidez_equivalente"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/rigidez_equivalente" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.rigidezEquivalenteString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/kgf_x_cm2" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rigidez_final"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/rigidez_final" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.rigidezFinalString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/kgf_x_cm2" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/flecha_imediata"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/flecha_imediata" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.flechaImediataString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/flecha_diferida"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/flecha_diferida" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.flechaDiferidaString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/flecha_total"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="45"
+                                android:text="@string/flecha_total" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="35"
+                                android:text="@{flechaViewModel.flechaTotalString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/flecha_limite"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/relatorio_table_title"
+                                android:layout_weight="35"
+                                android:text="@string/flecha_limite" />
+
+                            <TextView
+                                style="@style/relatorio_table_value"
+                                android:layout_weight="45"
+                                android:text="@{flechaViewModel.flechaLimiteString}" />
+
+                            <TextView
+                                style="@style/relatorio_table_unit"
+                                android:layout_weight="20"
+                                android:text="@string/cm" />
+
+                        </TableRow>
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

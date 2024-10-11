@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/guiga/Documents/Android Studio Projects/TCC/EscadasLongitudinais/app/src/main/res/layout/fragment_flecha.xml" value="0.21230398069963813" />
+        <entry key="..\:/Users/guiga/Documents/Android Studio Projects/TCC/EscadasLongitudinais/app/src/main/res/layout/fragment_flexao.xml" value="0.30462962962962964" />
+        <entry key="..\:/Users/guiga/Documents/Android Studio Projects/TCC/EscadasLongitudinais/app/src/main/res/layout/fragment_relatorio.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

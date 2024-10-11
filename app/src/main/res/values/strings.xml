@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GENERAL STRINGS -->
+    <string name="app_name">Escadas Longitudinais</string>
+    <string name="salvar">salvar</string>
+    <string name="sobre">Sobre</string>
+
+    <!-- UNIDADES -->
+    <string name="cm">cm</string>
+    <string name="cm4">cm⁴</string>
+    <string name="kgf">kgf</string>
+    <string name="kgf_por_cm2">kgf/cm²</string>
+    <string name="kgf_x_m">kgf.m</string>
+    <string name="kgf_x_cm">kgf.cm</string>
+    <string name="kgf_x_cm2">kgf.cm²</string>
+    <string name="cm2_por_m">cm²/m</string>
+
+    <!-- MATERIAL FRAGMENT STRINGS -->
+    <string name="materiais">Materiais</string>
+    <string name="classe_resistencia">Classe de Resistência</string>
+    <string name="cobrimento">Cobrimento</string>
+    <string name="cobrimento_hint">Cobrimento (cm)</string>
+    <string-array name="classes_resistencia">
+        <item>"C20"</item>
+        <item>"C25"</item>
+        <item>"C30"</item>
+        <item>"C35"</item>
+        <item>"C40"</item>
+        <item>"C45"</item>
+        <item>"C50"</item>
+    </string-array>
+    <string-array name="classes_resistencia_modulos_kgf_cm2">
+        <item>"200"</item>
+        <item>"250"</item>
+        <item>"300"</item>
+        <item>"350"</item>
+        <item>"400"</item>
+        <item>"450"</item>
+        <item>"500"</item>
+    </string-array>
+
+    <!-- TITULOS -->
+    <string name="geometria">Geometria</string>
+    <string name="degraus">Degraus</string>
+    <string name="cargas">Cargas</string>
+    <string name="dimensionamento">Dimensionamento</string>
+    <string name="calculo">Cálculo</string>
+    <string name="relatorios">Relatórios</string>
+    <string name="detalhamento">Detalhamento</string>
+
+
+    <!-- GEOMETRIA FRAGMENT STRING -->
+    <string name="lances">LANCES</string>
+    <string name="patamares">PATAMARES</string>
+    <string name="dimensoes_horizontais">DIMENSÕES HORIZONTAIS</string>
+    <string name="dimensoes_verticais">DIMENSÕES VERTICAIS</string>
+    <string name="um_lance">Um Lance</string>
+    <string name="dois_lances">Dois Lances</string>
+    <string name="patamar_inicial">Patamar Inicial</string>
+    <string name="patamar_intermediario">Patamar Intermediário</string>
+    <string name="lpini_text">Lpini (cm):</string>
+    <string name="lpini_hint">Comprimento do patamar inicial</string>
+    <string name="ll_text">LL (cm):</string>
+    <string name="ll_hint">Comprimento do lance</string>
+    <string name="lint_text">Lpint (cm):</string>
+    <string name="lint_hint">Comprimento do patamar intermediário</string>
+    <string name="larg_text">Larg (cm):</string>
+    <string name="larg_hint">Largura total</string>
+    <string name="apoioEsquerda_text">Ape (cm):</string>
+    <string name="apoioEsquerda_hint">Base do apoio esquerdo</string>
+    <string name="apoioDireita_text">Apd (cm):</string>
+    <string name="apoioDireita_hint">Base do apoio direito</string>
+    <string name="pd_text">Pd (cm):</string>
+    <string name="pd_hint">Pé direito</string>
+    <string name="h_text">h (cm):</string>
+    <string name="h_hint">Espessura da escada</string>
+    <string name="h_apoioEsquerda_text">hape(cm):</string>
+    <string name="h_apoioEsquerda_hint">Altura do apoio esquerdo</string>
+    <string name="h_apoioDireita_text">hapd (cm):</string>
+    <string name="h_apoioDireita_hint">Altura do apoio direito</string>
+
+    <!-- DEGRAUS FRAGMENT STRINGS -->
+    <string name="piso_e_espelho">PISO E ESPELHO</string>
+    <string name="conforto_blondel">CONFORTO (BLONDEL)</string>
+    <string name="eq_blondel"><![CDATA[62 < 2*Espelho + Piso < 64]]></string>
+    <string name="sugerir">Sugerir</string>
+    <string name="piso_text">Piso  (cm):</string>
+    <string name="piso_hint">Piso</string>
+    <string name="espelho_text">Espelho  (cm):</string>
+    <string name="espelho_hint">Espelho</string>
+    <string name="espelho_efetivo">Espelho Efetivo: %s</string>
+    <string name="piso">Piso: %s</string>
+    <string name="conforto"><![CDATA[Conforto: 63 < \%s\ + 2 * \%s\ < 65]]></string>
+
+    <!-- CARGAS -->
+    <string name="patamares_cargas">Patamares</string>
+    <string name="lance_cargas">Lance</string>
+    <string name="carga_total">Total\n(kgf/m²)</string>
+    <!-- CARGAS PERMANENTES -->
+    <string name="permanentes_titulo">Permanentes</string>
+    <string name="peso_proprio_titulo">Peso Próprio\n(kgf/m²)</string>
+    <string name="permanente_manual_titulo">Manual\n(kgf/m²)</string>
+    <string name="cargas_permanentes">Cargas<br>Permanentes Adicionais</br></string>
+    <string name="sobrecargas_titulo">Sobrecargas</string>
+    <string name="sobrecarga_manual_titulo">Manual\n(kgf/m²)</string>
+    <string name="sobrecarga_normativa">NBR 6120\n(kgf/m²)</string>
+    <string name="total_elu">Total - ELU\n(kgf/m²)</string>
+    <string name="total_els">Total - ELS\n(kgf/m²)</string>
+    <string name="g1_text">g<sub><small>1</small></sub> (kgf/m²)</string>
+    <string name="g1_hint">Carga nos patamares</string>
+    <string name="g2_text">g<sub><small>2</small></sub> (kgf/m²)</string>
+    <string name="g2_hint">Carga nos lances</string>
+    <!-- SOBRECARGAS -->
+    <string name="q1_text">q<sub><small>1</small></sub> (kgf/m²)</string>
+    <string name="q1_hint">Carga nos patamares</string>
+    <string name="q2_text">q<sub><small>2</small></sub> (kgf/m²)</string>
+    <string name="q2_hint">Carga nos lances</string>
+
+    <!-- DIMENSIONAMENTO -->
+    <!-- PROCESSAMENTO -->
+    <string name="cobrimento_efetivo_cm">d\' (cm):</string>
+    <string name="cobrimento_efetivo_hint">Cobrimento efetivo</string>
+    <!-- FLEXÃO -->
+    <string name="resultados">Resultados</string>
+    <string name="flexao">Flexão</string>
+    <string name="fyk">Fyk:</string>
+    <string name="fyd">Fyd:</string>
+    <string name="fck">Fck:</string>
+    <string name="fcd">Fcd:</string>
+    <string name="mk">Momento Característico (Mk):</string>
+    <string name="md">Momento de Cálculo (Md):</string>
+    <string name="altura_util">Altura Útil (d):</string>
+    <string name="altura_linha_neutra">Altura da Linha Neutra (x):</string>
+    <string name="relacao_x_sobre_d">Relação x/d:</string>
+    <string name="dominio_titulo">Domínio:</string>
+    <string name="area_aco_principal_titulo">As:</string>
+    <string name="area_aco_secundaria">As,sec:</string>
+    <string name="area_aco_negativa">As,neg:</string>
+    <string name="Ok">OK</string>
+    <string name="atualizar">Atualizar</string>
+    <!-- FLECHA -->
+    <string name="peca_fissurada">Peça fissurada</string>
+    <string name="peca_nao_fissurada">Peça não fissurada</string>
+    <string name="flecha">Flecha</string>
+    <string name="momento_els">Momento Atuante (Ma):</string>
+    <string name="momento_fissuracao">Momento de Fissuração (Mr):</string>
+    <string name="rigidez_total">Rigidez Total:</string>
+    <string name="altura_linha_neutra_estadio_2">Altura L.N.\n(Estádio II):</string>
+    <string name="momento_inercia_estadio_2">Momento De Inércia\n(Estádio II)</string>
+    <string name="rigidez_equivalente">Rigidez Equivalente\n(EIeq):</string>
+    <string name="rigidez_final">Rigidez Final:</string>
+    <string name="flecha_imediata">Flecha Imediata:</string>
+    <string name="flecha_diferida">Flecha Diferida:</string>
+    <string name="flecha_total">Flecha Total:</string>
+    <string name="flecha_limite">Flecha Limite:</string>
+
+    <!-- RESUMO -->
+    <string name="mostrar_detalhes">Mostrar Detalhes</string>
+    <string name="ocultar_detalhes">Ocultar Detalhes</string>
+    <!-- GEOMETRIA -->
+    <string name="comprimento_patamar_inicial">Comprimento do Patamar Inicial:</string>
+    <string name="largura_patamar_inicial">Largura do Patamar Inicial</string>
+    <string name="comprimento_patamar_intermediario">Comprimento do Patamar Intermediário:</string>
+    <string name="largura_patamar_intermediario">Largura do Patamar Intermediário</string>
+    <string name="comprimento_lance">Comprimento do Lance:</string>
+    <string name="largura_lance">Largura do Lance:</string>
+    <string name="espessura">Espessura</string>
+    <string name="pe_direito">Pé Direito</string>
+    <string name="pe_direito_por_lance">Pé Direito Por Lance:</string>
+    <string name="piso_resumo">Piso:</string>
+    <string name="espelho_resumo">Espelho:</string>
+    <string name="apoio_esquerdo_resumo">Apoio Esquerdo:</string>
+    <string name="apoio_direito_resumo">Apoio Direito:</string>
+
+
+    <string name="numero_de_degraus">Número de Degraus</string>
+    <string name="espelho_desejado">Espelho Desejado</string>
+
+    <string name="resumo_de_cargas">Resumo de Cargas</string>
+    <string name="sobrecargas">Sobrecarga Manual</string>
+    <string name="decimal_2_digits">%2$.2f</string>
+    <string name="carga_kgf_por_m2">Módulo (kgf/m²): %s</string>
+
+
+    <!--DETALHAMENTO -->
+    <string name="resumo_de_aco">Resumo do Aço</string>
+    <string name="area_aco_efetivo_por_metro">As<sub><small>efetivo</small></sub>: %,.2f cm²/m</string>
+    <string name="armadura_positiva_principal">Armadura Positiva Principal:</string>
+    <string name="resumo_de_dimensionamento">Resumo de Dimensionamento</string>
+
+    <!-- ARRAYS -->
+    <string-array name="sobrecargas_nbr_6120_descricoes">
+        <item>"Hospitais"</item>
+        <item>"Residências, hotéis (dentro de unidades autônomas)"</item>
+        <item>"Residências, hotéis (uso comum)"</item>
+        <item>"Edifícios Comerciais, clubes, escritórios e bibliotecas"</item>
+        <item>"Centros de exposição"</item>
+        <item>"Centros de convenções e locais de reunião de pessoas, teatros, igrejas"</item>
+        <item>"Escolas"</item>
+        <item>"Cinemas, centros comerciais, shopping centers"</item>
+        <item>"Servindo de arquibancadas"</item>
+        <item>"Com acesso público"</item>
+        <item>"Sem acesso público"</item>
+    </string-array>
+    <string-array name="sobrecargas_nbr_6120_modulos_kgf_m2">
+        <item>300.0</item>
+        <item>250.0</item>
+        <item>300.0</item>
+        <item>300.0</item>
+        <item>500.0</item>
+        <item>500.0</item>
+        <item>300.0</item>
+        <item>400.0</item>
+        <item>500.0</item>
+        <item>300.0</item>
+        <item>250.0</item>
+    </string-array>
+</resources>

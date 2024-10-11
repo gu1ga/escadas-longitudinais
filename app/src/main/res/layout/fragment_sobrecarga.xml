@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.sobrecarga.SobrecargaFragment">
+
+    <data>
+
+        <variable
+            name="sobrecargaViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.sobrecarga.SobrecargaViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_check_box_sobrecarga_nbr6120"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_sobrecarga_normativa"
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sobrecarga Normativa (NBR 6120)"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_sobrecarga_nbr6120"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_sobrecarga_nbr6120"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:checked="@={sobrecargaViewModel.sobrecargaNormativaCheckBox}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_sobrecarga_nbr6120"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/default_top_bottom_marign"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="@dimen/default_top_bottom_marign"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_check_box_sobrecarga_nbr6120"
+            android:background="@drawable/edittext_rectangle"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinner_cargas_nbr6120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/sobrecargas_nbr_6120_descricoes"
+                android:spinnerMode="dialog"
+                tools:setOnItemSelectedListener="@{sobrecargaViewModel.spinnerClickListener}" />
+
+            <TextView
+                android:id="@+id/text_carga_nbr6120_selecionada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                android:text="@{@string/carga_kgf_por_m2(sobrecargaViewModel.valorTextoCargaNoramtiva)}" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_check_box_sobrecarga_manual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_sobrecarga_nbr6120"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_sobrecarga_manual"
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sobrecarga Manual"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_sobrecarga_manual"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_sobrecarga_manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:checked="@={sobrecargaViewModel.sobrecargaManualCheckBox}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/image_cargas_sobrecargas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/default_start_end_margin"
+            android:layout_marginTop="@dimen/default_top_bottom_marign"
+            android:layout_marginEnd="@dimen/default_start_end_margin"
+            android:layout_marginBottom="@dimen/default_top_bottom_marign"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_check_box_sobrecarga_manual"
+            app:layout_constraintBottom_toTopOf="@id/scroll_view_sobrecarga"
+            android:src="@drawable/cargas_sobrecarga_manual" />
+
+        <ScrollView
+            android:id="@+id/scroll_view_sobrecarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_start_end_margin"
+            android:layout_marginTop="@dimen/default_top_bottom_marign"
+            android:layout_marginEnd="@dimen/default_start_end_margin"
+            android:layout_marginBottom="@dimen/default_top_bottom_marign"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rectangle"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_sobrecarga_patamares"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:hint="@string/q1_text"
+                    app:helperText="@string/q1_hint"
+                    app:helperTextEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_sobrecarga_patamares"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="@={sobrecargaViewModel.sobrecargaPatamares}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_sobrecarga_lances"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:hint="@string/q2_text"
+                    app:helperText="@string/q2_hint"
+                    app:helperTextEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_sobrecarga_lances"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="@={sobrecargaViewModel.sobrecargaLances}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

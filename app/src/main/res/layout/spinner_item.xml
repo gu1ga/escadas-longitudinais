@@ -1,0 +1,13 @@
+<TextView xmlns:android ="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="none"
+    android:paddingStart="@dimen/default_start_end_margin"
+    android:paddingTop="@dimen/default_top_bottom_marign"
+    android:paddingBottom="@dimen/default_top_bottom_marign"
+    style="@style/home_titles"
+
+    android:textSize="@dimen/text_size_normal"
+
+    />

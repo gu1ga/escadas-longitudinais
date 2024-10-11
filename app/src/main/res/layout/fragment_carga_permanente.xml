@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.permanente.CargaPermanenteFragment">
+
+    <data>
+
+        <variable
+            name="cargaPermanenteViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.permanente.CargaPermanenteViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_padding"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_sobrecarga_manual"
+                style="@style/home_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Carga Permanente Manual"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_sobrecarga_manual"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_sobrecarga_manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:checked="@={cargaPermanenteViewModel.cargaPermanenteManualCheckBox}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_carga_pormanente_manual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_padding"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding">
+
+            <ImageView
+                android:id="@+id/image_cargas_permanentes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/default_start_end_margin"
+                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                android:layout_marginEnd="@dimen/default_start_end_margin"
+                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                android:adjustViewBounds="true"
+                android:src="@drawable/cargas_permanente_manual"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_carga_permanente_patamares"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="@string/g1_text"
+                app:helperText="@string/g1_hint"
+                app:helperTextEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/image_cargas_permanentes">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_carga_permanente_patamares"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="@={cargaPermanenteViewModel.cargaPermanentePatamares}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_carga_permanente_lances"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="@string/g2_text"
+                app:helperText="@string/g2_hint"
+                app:helperTextEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/layout_carga_permanente_patamares">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_carga_permanente_lances"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="@={cargaPermanenteViewModel.cargaPermanenteLance}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text_aviso"
+            style="@style/home_titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_start_end_margin"
+            android:text="Peso próprio calculado automaticamente!"
+            android:textColor="@color/da_wae_dark"
+            android:textSize="@dimen/text_size_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_sobrecarga_manual"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+</layout>

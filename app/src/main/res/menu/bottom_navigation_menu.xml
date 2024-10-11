@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/geometriaFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_geometria"
+        android:title="@string/geometria"/>
+    <item
+        android:id="@+id/cargasFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_cargas"
+        android:title="@string/cargas" />
+    <item
+        android:id="@+id/dimensionamentoFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_dimensionamento"
+        android:title="@string/calculo"/>
+    <item
+        android:id="@+id/detalhamentoFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_detalhamento"
+        android:title="@string/detalhamento"/>
+</menu>

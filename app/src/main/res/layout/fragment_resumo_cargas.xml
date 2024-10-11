@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.resumo.ResumoCargasFragment">
+
+    <data>
+
+        <variable
+            name="resumoViewModel"
+            type="br.com.gomes.moreira.guilherme.tcc.escadaslongitudinais.cargas.resumo.ResumoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/image_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            style="@style/scroll_view">
+
+            <LinearLayout
+                android:id="@+id/layout_resumo_cargas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:padding="@dimen/default_padding">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:shrinkColumns="*"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign">
+
+                        <TableRow
+                            android:id="@+id/cargas_permanentes_titulo"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_dark"
+                            android:gravity="center">
+
+                            <TextView
+                                android:textSize="@dimen/text_size_big"
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:text="Cargas Permanentes"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"/>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:paddingStart="@dimen/default_start_end_margin"
+                                android:paddingEnd="@dimen/default_start_end_margin"
+                                android:id="@+id/botao_permanentes"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                                android:layout_marginEnd="@dimen/default_start_end_margin"
+                                android:background="@color/da_wae_bright"
+                                android:textColor="@color/white"
+                                android:text="@string/mostrar_detalhes"
+                                android:textAllCaps="false"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/colunas_cargas_permanentes"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_light"
+                            android:gravity="center">
+
+                            <Space
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"/>
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Patamares"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Lance"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/peso_proprio"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Peso Próprio\n(kgf/m²)"/>
+
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.pesoProprioPatamaresString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.pesoProprioLanceString}"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/carga_permanente_manual"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Manual\n(kgf/m²)" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaPermanenteManualPatamaresString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaPermanenteManualLanceString}"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/carga_permanente_total"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center">
+
+                            <TextView
+                                android:text="Total\n(kgf/m²)"
+                                style="@style/cargas_table_title" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaPermanenteTotalPatamaresString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaPermanenteTotalLanceString}"
+                                />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:shrinkColumns="*"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_dark"
+                            android:gravity="center">
+                            <TextView
+                                android:textSize="@dimen/text_size_big"
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:text="Sobrecargas"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"/>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:paddingStart="@dimen/default_start_end_margin"
+                                android:paddingEnd="@dimen/default_start_end_margin"
+                                android:id="@+id/botao_sobrecargas"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_start_end_margin"
+                                android:layout_marginTop="@dimen/default_top_bottom_marign"
+                                android:layout_marginBottom="@dimen/default_top_bottom_marign"
+                                android:layout_marginEnd="@dimen/default_start_end_margin"
+                                android:background="@color/da_wae_bright"
+                                android:textColor="@color/white"
+                                android:text="@string/mostrar_detalhes"
+                                android:textAllCaps="false"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_light"
+                            android:gravity="center">
+
+                            <Space
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"/>
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Patamares"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Lance"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/sobrecarga_normativa"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="NBR 6120\n(kgf/m²)"/>
+
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaNormativaString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaNormativaString}"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/sobrecarga_manaual"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_bright"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Manual\n(kgf/m²)" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaManualPatamaresString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaManualLanceString}"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/sobrecarga_total"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center">
+
+                            <TextView
+                                android:text="Total\n(kgf/m²)"
+                                style="@style/cargas_table_title" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaTotalPatamaresString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.sobrecargaTotalLanceString}"
+                                />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:shrinkColumns="*"
+                        android:layout_marginTop="@dimen/default_top_bottom_marign"
+                        android:layout_marginBottom="@dimen/default_top_bottom_marign">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_dark"
+                            android:gravity="center">
+                            <TextView
+                                android:textSize="@dimen/text_size_big"
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:text="Total"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_light"
+                            android:gravity="center">
+
+                            <Space
+                                android:layout_margin="@dimen/default_start_end_margin"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"/>
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Patamares"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_title"
+                                android:text="Lance"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/carga_total_e_l_u"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center">
+
+                            <TextView
+                                android:text="Total - ELU\n(kgf/m²)"
+                                style="@style/cargas_table_title" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaTotalPatamaresELUString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaTotalLanceELUString}"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/carga_total_e_l_s"
+                            android:layout_width="match_parent"
+                            android:background="@color/da_wae_lighter"
+                            android:gravity="center">
+
+                            <TextView
+                                android:text="Total - ELS\n(kgf/m²)"
+                                style="@style/cargas_table_title" />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaTotalPatamaresELSString}"
+                                />
+
+                            <TextView
+                                style="@style/cargas_table_value"
+                                android:text="@{resumoViewModel.cargaTotalLanceELSString}"
+                                />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>
